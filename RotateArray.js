@@ -53,6 +53,18 @@ function rotate(nums, k) {
   }
 }
 
+function rotate(nums, k) {
+  let n = nums.length;
+  k = k % n;
+  let rotated = new Array(n);
+  for (let i = 0; i < n; i++) {
+    rotated[(i + k) % n] = nums[i];
+  }
+  for (let i = 0; i < n; i++) {
+    nums[i] = rotated[i];
+  }
+}
+
 //in place with reversals
 function rotate(nums, k) {
   let n = nums.length;
